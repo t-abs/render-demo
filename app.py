@@ -5,7 +5,8 @@ import os
 
 app = Flask(__name__)
 
-model_path = r'C:\Users\KIIT\Desktop\render-demo\model .pkl'
+# Relative path to model file — ensure it's named 'model.pkl' and placed in the same folder
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
 
 try:
     if not os.path.isfile(model_path):
@@ -28,12 +29,10 @@ def predict():
         return render_template('index.html', prediction_text="Model is not loaded. Cannot make predictions.")
     
     try:
-        # Extract features from form
         cgpa = float(request.form['cgpa'])
         iq = int(request.form['iq'])
         profile_score = int(request.form['profile_score'])
 
-        # Make prediction
         final_features = np.array([[cgpa, iq, profile_score]])
         prediction = model.predict(final_features)
         output = 'Placed' if prediction[0] == 1 else 'Not Placed'
@@ -42,5 +41,6 @@ def predict():
     except Exception as e:
         return render_template('index.html', prediction_text=f"Error during prediction: {e}")
 
+# MAIN entry point
 if __name__ == "__main__":
     app.run(debug=True)
