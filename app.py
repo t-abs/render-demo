@@ -5,8 +5,8 @@ import os
 
 app = Flask(__name__)
 
-# Relative path to model file — ensure it's named 'model.pkl' and placed in the same folder
-model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
+# Use relative path (works both locally and on Render)
+model_path = r'C:\Users\KIIT\Desktop\render-demo\model .pkl'
 
 try:
     if not os.path.isfile(model_path):
