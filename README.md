@@ -9,6 +9,10 @@ This tool provides an interactive and user-friendly interface for real-time plac
 
 ![Screenshot 2025-05-24 135143](https://github.com/user-attachments/assets/97537ff5-c59e-4303-bb06-88328b1e549c)
 
+Streamlit Deployment-
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/a3bca9a9-ec1e-4a67-a147-3e674aab5096" />
+
 
 
 
